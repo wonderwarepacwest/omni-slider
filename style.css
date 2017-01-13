@@ -1,0 +1,28 @@
+h2 {
+	clear: both;
+}
+
+input[type=range] {
+	margin-left: 85px;
+	width: 510px;
+}
+
+#support input[type=range] {
+	width: 340px;
+}
+
+.step-descs > div {
+	float: left;
+	padding: 0 10px;
+	width: 148px;
+	cursor: pointer;
+	border: 1px solid transparent;
+}
+
+.step-descs h3 {
+	text-align: center;
+}
+
+.step-descs > .selected {
+	border-color: black;
+}

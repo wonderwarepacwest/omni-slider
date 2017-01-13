@@ -1,1 +1,98 @@
+<title>InTouch Omni Subscription</title>
+
+<link rel="stylesheet" href="style.css">
+
 <h1>InTouch Omni Subscription</h1>
+<div>
+	<label>
+		<h2>I/O</h2>
+		<input type="range" id="io-range" value="0"> <span id="io-value">500</span>
+	</label>
+</div>
+
+<div>
+	<label>
+		<h2>Traditional Clients (HMI/Trend)</h2>
+		<input type="range" id="clients-range" min="1" max="100" step="1" value="1"> <input type="number" id="clients-value" min="1" max="100" step="1" value="1">
+	</label>
+</div>
+
+<div>
+	<label>
+		<h2>HMI-Server Clients</h2>
+		<input type="range" id="server-clients-range" value="0">
+	</label>
+	<div id="server-clients-descs" class="step-descs">
+		<div data-value="Limited" class="selected">
+			<h3>Limited</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae sem in arcu euismod ornare.</p>
+		</div>
+		<div data-value="Unlimited">
+			<h3>Unlimited</h3>
+			<p>Sed id dui volutpat, aliquet est et, tempor quam. Integer a risus ac diam suscipit consectetur ut sit amet nunc.</p>
+		</div>
+		<div data-value="Redundant">
+			<h3>Redundant</h3>
+			<p>Integer imperdiet nisl eget ex consequat, at pulvinar magna lacinia. Donec felis tortor, lobortis at nunc eget, semper porta nulla.</p>
+		</div>
+		<div data-value="Multi-Redundant">
+			<h3>Multi-Redundant</h3>
+			<p>Nullam ornare scelerisque ipsum, sit amet pharetra lorem rutrum ac. Proin finibus laoreet felis, eget aliquam diam pretium eget.</p>
+		</div>
+	</div>
+</div>
+
+<div>
+	<label>
+		<h2>Function</h2>
+		<input type="range" id="function-range" value="0">
+	</label>
+	<div id="function-descs" class="step-descs">
+		<div data-value="View" class="selected">
+			<h3>View</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae sem in arcu euismod ornare.</p>
+		</div>
+		<div data-value="Operate">
+			<h3>Operate</h3>
+			<p>Sed id dui volutpat, aliquet est et, tempor quam. Integer a risus ac diam suscipit consectetur ut sit amet nunc.</p>
+		</div>
+		<div data-value="Manage">
+			<h3>Manage</h3>
+			<p>Integer imperdiet nisl eget ex consequat, at pulvinar magna lacinia. Donec felis tortor, lobortis at nunc eget, semper porta nulla.</p>
+		</div>
+		<div data-value="Optimize">
+			<h3>Optimize</h3>
+			<p>Nullam ornare scelerisque ipsum, sit amet pharetra lorem rutrum ac. Proin finibus laoreet felis, eget aliquam diam pretium eget.</p>
+		</div>
+	</div>
+</div>
+
+<div id="support">
+	<label>
+		<h2>Support</h2>
+		<input type="range" id="support-range" value="0">
+	</label>
+	<div id="support-descs" class="step-descs">
+		<div data-value="Standard" class="selected">
+			<h3>Standard</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae sem in arcu euismod ornare.</p>
+		</div>
+		<div data-value="Premium">
+			<h3>Premium</h3>
+			<p>Sed id dui volutpat, aliquet est et, tempor quam. Integer a risus ac diam suscipit consectetur ut sit amet nunc.</p>
+		</div>
+		<div data-value="Elite">
+			<h3>Elite</h3>
+			<p>Integer imperdiet nisl eget ex consequat, at pulvinar magna lacinia. Donec felis tortor, lobortis at nunc eget, semper porta nulla.</p>
+		</div>
+	</div>
+</div>
+
+<div>
+	<label>
+		<h2>Term</h2>
+		<input type="range" id="term-range" min="1" max="10" step="1" value="1"> <input type="number" id="term-value" min="1" max="10" step="1" value="1"> years
+	</label>
+</div>
+
+<script src="script.js"></script>
