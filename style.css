@@ -4,11 +4,28 @@ h2 {
 
 input[type=range] {
 	margin-left: 85px;
+	margin-right: 85px;
 	width: 510px;
 }
 
 #support input[type=range] {
 	width: 340px;
+}
+
+.ranges input[type=range] {
+	float: left;
+}
+
+#server-clients .ranges input[type=range] {
+	width: 170px;
+}
+
+#server-clients-redundancy-range {
+	margin-left: 95px;
+}
+
+.step-descs {
+	clear: both;
 }
 
 .step-descs > div {
@@ -25,4 +42,23 @@ input[type=range] {
 
 .step-descs > .selected {
 	border-color: black;
+}
+
+.step-descs.disabled > div {
+	color: gray;
+	cursor: default;
+	border-color: transparent;
+}
+
+#server-clients .step-descs {
+	float: left;
+	clear: none;
+}
+
+#server-clients-type {
+	clear: both !important;
+}
+
+#server-clients-redundancy {
+	margin-left: 20px;
 }

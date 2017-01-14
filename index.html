@@ -17,12 +17,13 @@
 	</label>
 </div>
 
-<div>
-	<label>
-		<h2>HMI-Server Clients</h2>
-		<input type="range" id="server-clients-range" value="0">
-	</label>
-	<div id="server-clients-descs" class="step-descs">
+<div id="server-clients">
+	<h2>HMI-Server Clients</h2>
+	<div class="ranges">
+		<input type="range" id="server-clients-type-range" value="0">
+		<input type="range" id="server-clients-redundancy-range" value="0">
+	</div>
+	<div id="server-clients-type" class="step-descs">
 		<div data-value="Limited" class="selected">
 			<h3>Limited</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae sem in arcu euismod ornare.</p>
@@ -31,7 +32,9 @@
 			<h3>Unlimited</h3>
 			<p>Sed id dui volutpat, aliquet est et, tempor quam. Integer a risus ac diam suscipit consectetur ut sit amet nunc.</p>
 		</div>
-		<div data-value="Redundant">
+	</div>
+	<div id="server-clients-redundancy" class="step-descs disabled">
+		<div data-value="Redundant" class="selected">
 			<h3>Redundant</h3>
 			<p>Integer imperdiet nisl eget ex consequat, at pulvinar magna lacinia. Donec felis tortor, lobortis at nunc eget, semper porta nulla.</p>
 		</div>

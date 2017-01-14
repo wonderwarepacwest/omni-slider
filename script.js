@@ -27,35 +27,93 @@ ioRange.addEventListener('input', function() {
 })
 
 
-var serverClientsSteps = [
-	'Limited', 'Unlimited', 'Redundant', 'Multi-Redundant',
+var serverClientsTypeSteps = [
+	'Limited', 'Unlimited',
 ]
 
-var serverClientsRange = document.getElementById('server-clients-range')
-serverClientsRange.min = 0
-serverClientsRange.max = serverClientsSteps.length - 1
+var serverClientsTypeRange = document.getElementById('server-clients-type-range')
+serverClientsTypeRange.min = 0
+serverClientsTypeRange.max = serverClientsTypeSteps.length - 1
 
-serverClientsRange.addEventListener('input', function() {
-	var selectedEl = document.querySelector('#server-clients-descs > .selected')
-	var el = document.querySelector('#server-clients-descs > [data-value="' + serverClientsSteps[this.value] + '"]')
+serverClientsTypeRange.addEventListener('input', function() {
+	var selectedEl = document.querySelector('#server-clients-type > .selected')
+	var el = document.querySelector('#server-clients-type > [data-value="' + serverClientsTypeSteps[this.value] + '"]')
 
 	if(el != selectedEl) {
-		if(selectedEl)
+		if(selectedEl) {
 			selectedEl.classList.remove('selected')
+		}
 
-		if(el)
+		if(el) {
 			el.classList.add('selected')
+
+			if(serverClientsTypeSteps[this.value] === 'Limited') {
+				serverClientsRedundancyRange.disabled = true;
+				document.getElementById('server-clients-redundancy').classList.add('disabled')
+			} else {
+				serverClientsRedundancyRange.disabled = false;
+				document.getElementById('server-clients-redundancy').classList.remove('disabled')
+			}
+		}
 	}
 })
 
-var serverClientsDescs = document.querySelectorAll('#server-clients-descs > [data-value]')
-for(var desc of serverClientsDescs) {
-	desc.addEventListener('click', function() {
-		serverClientsRange.value = serverClientsSteps.indexOf(this.dataset.value)
-		var selectedEl = document.querySelector('#server-clients-descs > .selected')
+var serverClientsTypes = document.querySelectorAll('#server-clients-type > [data-value]')
+for(var type of serverClientsTypes) {
+	type.addEventListener('click', function() {
+		serverClientsTypeRange.value = serverClientsTypeSteps.indexOf(this.dataset.value)
+		var selectedEl = document.querySelector('#server-clients-type > .selected')
 		if(this != selectedEl) {
-			if(selectedEl)
+			if(selectedEl) {
 				selectedEl.classList.remove('selected')
+			}
+
+			this.classList.add('selected')
+
+			if(this.dataset.value === 'Limited') {
+				serverClientsRedundancyRange.disabled = true;
+				document.getElementById('server-clients-redundancy').classList.add('disabled')
+			} else {
+				serverClientsRedundancyRange.disabled = false;
+				document.getElementById('server-clients-redundancy').classList.remove('disabled')
+			}
+		}
+	})
+}
+
+
+var serverClientsRedundancySteps = [
+	'Redundant', 'Multi-Redundant',
+]
+
+var serverClientsRedundancyRange = document.getElementById('server-clients-redundancy-range')
+serverClientsRedundancyRange.min = 0
+serverClientsRedundancyRange.max = serverClientsRedundancySteps.length - 1
+
+serverClientsRedundancyRange.addEventListener('input', function() {
+	var selectedEl = document.querySelector('#server-clients-redundancy > .selected')
+	var el = document.querySelector('#server-clients-redundancy > [data-value="' + serverClientsRedundancySteps[this.value] + '"]')
+
+	if(el != selectedEl) {
+		if(selectedEl) {
+			selectedEl.classList.remove('selected')
+		}
+
+		if(el) {
+			el.classList.add('selected')
+		}
+	}
+})
+
+var serverClientsTypes = document.querySelectorAll('#server-clients-redundancy > [data-value]')
+for(var type of serverClientsTypes) {
+	type.addEventListener('click', function() {
+		serverClientsRedundancyRange.value = serverClientsRedundancySteps.indexOf(this.dataset.value)
+		var selectedEl = document.querySelector('#server-clients-redundancy > .selected')
+		if(this != selectedEl) {
+			if(selectedEl) {
+				selectedEl.classList.remove('selected')
+			}
 
 			this.classList.add('selected')
 		}
@@ -76,11 +134,13 @@ functionRange.addEventListener('input', function() {
 	var el = document.querySelector('#function-descs > [data-value="' + functionSteps[this.value] + '"]')
 
 	if(el != selectedEl) {
-		if(selectedEl)
+		if(selectedEl) {
 			selectedEl.classList.remove('selected')
+		}
 
-		if(el)
+		if(el) {
 			el.classList.add('selected')
+		}
 	}
 })
 
@@ -90,8 +150,9 @@ for(var desc of functionDescs) {
 		functionRange.value = functionSteps.indexOf(this.dataset.value)
 		var selectedEl = document.querySelector('#function-descs > .selected')
 		if(this != selectedEl) {
-			if(selectedEl)
+			if(selectedEl) {
 				selectedEl.classList.remove('selected')
+			}
 
 			this.classList.add('selected')
 		}
@@ -112,11 +173,13 @@ supportRange.addEventListener('input', function() {
 	var el = document.querySelector('#support-descs > [data-value="' + supportSteps[this.value] + '"]')
 
 	if(el != selectedEl) {
-		if(selectedEl)
+		if(selectedEl) {
 			selectedEl.classList.remove('selected')
+		}
 
-		if(el)
+		if(el) {
 			el.classList.add('selected')
+		}
 	}
 })
 
@@ -126,8 +189,9 @@ for(var desc of supportDescs) {
 		supportRange.value = supportSteps.indexOf(this.dataset.value)
 		var selectedEl = document.querySelector('#support-descs > .selected')
 		if(this != selectedEl) {
-			if(selectedEl)
+			if(selectedEl) {
 				selectedEl.classList.remove('selected')
+			}
 
 			this.classList.add('selected')
 		}
