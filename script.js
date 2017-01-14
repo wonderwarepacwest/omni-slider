@@ -1,22 +1,20 @@
-var ioSteps = [
-	500,
-	1000,
-	1500,
-	2000,
-	2500,
-	3000,
-	3500,
-	4000,
-	4500,
-	5000,
-	10000,
-	25000,
-	50000,
-	100000,
-	250000,
-	500000,
-	1000000,
-]
+var ioSteps = []
+
+for(var i = 500; i < 5000; i += 500) {
+	ioSteps.push(i)
+}
+
+for(var i = 5000; i < 100000; i += 1000) {
+	ioSteps.push(i)
+}
+
+for(var i = 100000; i < 300000; i += 25000) {
+	ioSteps.push(i)
+}
+
+for(var i = 300000; i <= 1000000; i += 100000) {
+	ioSteps.push(i)
+}
 
 var ioRange = document.getElementById('io-range')
 ioRange.min = 0
