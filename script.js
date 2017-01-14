@@ -27,6 +27,14 @@ ioRange.addEventListener('input', function() {
 })
 
 
+var clientsRange = document.getElementById('clients-range')
+var clientsValue = document.getElementById('clients-value')
+
+clientsRange.addEventListener('input', function() {
+	clientsValue.innerText = this.value
+})
+
+
 var serverClientsTypeSteps = [
 	'Limited', 'Unlimited',
 ]
@@ -108,6 +116,10 @@ serverClientsRedundancyRange.addEventListener('input', function() {
 var serverClientsTypes = document.querySelectorAll('#server-clients-redundancy > [data-value]')
 for(var type of serverClientsTypes) {
 	type.addEventListener('click', function() {
+		if(this.parentElement.classList.contains('disabled')) {
+			return
+		}
+
 		serverClientsRedundancyRange.value = serverClientsRedundancySteps.indexOf(this.dataset.value)
 		var selectedEl = document.querySelector('#server-clients-redundancy > .selected')
 		if(this != selectedEl) {
@@ -199,16 +211,9 @@ for(var desc of supportDescs) {
 }
 
 
-// linkInputs('io-range', 'io-value')
-linkInputs('clients-range', 'clients-value')
-linkInputs('term-range', 'term-value')
+var termRange = document.getElementById('term-range')
+var termValue = document.getElementById('term-value')
 
-function linkInputs(rangeId, valueId) {
-	document.getElementById(rangeId).addEventListener('input', function() {
-		document.getElementById(valueId).value = this.value
-	})
-
-	document.getElementById(valueId).addEventListener('input', function() {
-		document.getElementById(rangeId).value = this.value
-	})
-}
+termRange.addEventListener('input', function() {
+	termValue.innerText = this.value
+})

@@ -1,24 +1,25 @@
 <title>InTouch Omni Subscription</title>
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="style.css">
 
 <h1>InTouch Omni Subscription</h1>
-<div>
+<div class="section">
 	<label>
-		<h2>I/O</h2>
-		<input type="range" id="io-range" value="0"> <span id="io-value">500</span>
+		<h2><i class="material-icons">device_hub</i> I/O</h2>
+		<input type="range" id="io-range" value="0"> <span id="io-value" class="display">500</span>
 	</label>
 </div>
 
-<div>
+<div class="section">
 	<label>
-		<h2>Traditional Clients (HMI/Trend)</h2>
-		<input type="range" id="clients-range" min="1" max="100" step="1" value="1"> <input type="number" id="clients-value" min="1" max="100" step="1" value="1">
+		<h2><i class="material-icons">desktop_windows</i> Traditional Clients (HMI/Trend)</h2>
+		<input type="range" id="clients-range" min="1" max="100" step="1" value="1"> <span id="clients-value" class="display">1</span>
 	</label>
 </div>
 
-<div id="server-clients">
-	<h2>HMI-Server Clients</h2>
+<div id="server-clients" class="section">
+	<h2><i class="material-icons">settings_system_daydream</i> HMI-Server Clients</h2>
 	<div class="ranges">
 		<input type="range" id="server-clients-type-range" value="0">
 		<input type="range" id="server-clients-redundancy-range" value="0">
@@ -26,75 +27,105 @@
 	<div id="server-clients-type" class="step-descs">
 		<div data-value="Limited" class="selected">
 			<h3>Limited</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae sem in arcu euismod ornare.</p>
+			<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae sem in arcu euismod ornare.</p>-->
 		</div>
 		<div data-value="Unlimited">
 			<h3>Unlimited</h3>
-			<p>Sed id dui volutpat, aliquet est et, tempor quam. Integer a risus ac diam suscipit consectetur ut sit amet nunc.</p>
+			<!--<p>Sed id dui volutpat, aliquet est et, tempor quam. Integer a risus ac diam suscipit consectetur ut sit amet nunc.</p>-->
 		</div>
 	</div>
 	<div id="server-clients-redundancy" class="step-descs disabled">
 		<div data-value="Redundant" class="selected">
 			<h3>Redundant</h3>
-			<p>Integer imperdiet nisl eget ex consequat, at pulvinar magna lacinia. Donec felis tortor, lobortis at nunc eget, semper porta nulla.</p>
+			<!--<p>Integer imperdiet nisl eget ex consequat, at pulvinar magna lacinia. Donec felis tortor, lobortis at nunc eget, semper porta nulla.</p>-->
 		</div>
 		<div data-value="Multi-Redundant">
 			<h3>Multi-Redundant</h3>
-			<p>Nullam ornare scelerisque ipsum, sit amet pharetra lorem rutrum ac. Proin finibus laoreet felis, eget aliquam diam pretium eget.</p>
+			<!--<p>Nullam ornare scelerisque ipsum, sit amet pharetra lorem rutrum ac. Proin finibus laoreet felis, eget aliquam diam pretium eget.</p>-->
 		</div>
 	</div>
 </div>
 
-<div>
+<div class="section">
 	<label>
-		<h2>Function</h2>
+		<h2><i class="material-icons">settings</i> Function</h2>
 		<input type="range" id="function-range" value="0">
 	</label>
 	<div id="function-descs" class="step-descs">
 		<div data-value="View" class="selected">
-			<h3>View</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae sem in arcu euismod ornare.</p>
+			<h3>Entry</h3>
+			<ul>
+				<li>Read-only clients</li>
+				<li>All standard OI servers</li>
+			</ul>
 		</div>
 		<div data-value="Operate">
-			<h3>Operate</h3>
-			<p>Sed id dui volutpat, aliquet est et, tempor quam. Integer a risus ac diam suscipit consectetur ut sit amet nunc.</p>
+			<h3>Standard</h3>
+			<ul>
+				<li class="emph">All Entry features +</li>
+				<li>World class Historian</li>
+				<li>Connectivity redundancy</li>
+				<li>Engineering tools</li>
+				<li>Cloud infrastructure</li>
+			</ul>
 		</div>
 		<div data-value="Manage">
-			<h3>Manage</h3>
-			<p>Integer imperdiet nisl eget ex consequat, at pulvinar magna lacinia. Donec felis tortor, lobortis at nunc eget, semper porta nulla.</p>
+			<h3>Professional</h3>
+			<ul>
+				<li class="emph">All Standard features +</li>
+				<li>World class Historian</li>
+				<li>Application redundancy</li>
+				<li>Unlimited read-only access</li>
+				<li>Cloud Historian</li>
+			</ul>
 		</div>
 		<div data-value="Optimize">
-			<h3>Optimize</h3>
-			<p>Nullam ornare scelerisque ipsum, sit amet pharetra lorem rutrum ac. Proin finibus laoreet felis, eget aliquam diam pretium eget.</p>
+			<h3>Premier</h3>
+			<ul>
+				<li class="emph">All Professional features +</li>
+				<li>OMI clients web access</li>
+				<li>SCADA playback</li>
+				<li>Automated project build</li>
+			</ul>
 		</div>
 	</div>
 </div>
 
-<div id="support">
+<div id="support" class="section">
 	<label>
-		<h2>Support</h2>
+		<h2><i class="material-icons">phone</i> Support</h2>
 		<input type="range" id="support-range" value="0">
 	</label>
 	<div id="support-descs" class="step-descs">
 		<div data-value="Standard" class="selected">
 			<h3>Standard</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae sem in arcu euismod ornare.</p>
+			<ul>
+				<li>Business hours support</li>
+				<li>Direct distributor support</li>
+			</ul>
 		</div>
 		<div data-value="Premium">
 			<h3>Premium</h3>
-			<p>Sed id dui volutpat, aliquet est et, tempor quam. Integer a risus ac diam suscipit consectetur ut sit amet nunc.</p>
+			<ul>
+				<li class="emph">All Standard features +</li>
+				<li>24 x 7 x 365 support access</li>
+				<li>Distributor + Wonderware call center</li>
+			</ul>
 		</div>
 		<div data-value="Elite">
 			<h3>Elite</h3>
-			<p>Integer imperdiet nisl eget ex consequat, at pulvinar magna lacinia. Donec felis tortor, lobortis at nunc eget, semper porta nulla.</p>
+			<ul>
+				<li class="emph">All Premium features +</li>
+				<li>Mission-critical support</li>
+			</ul>
 		</div>
 	</div>
 </div>
 
-<div>
+<div class="section">
 	<label>
-		<h2>Term</h2>
-		<input type="range" id="term-range" min="1" max="10" step="1" value="1"> <input type="number" id="term-value" min="1" max="10" step="1" value="1"> years
+		<h2><i class="material-icons">event</i> Term</h2>
+		<input type="range" id="term-range" min="1" max="10" step="1" value="1"> <span class="display"><span id="term-value">1</span> year(s)</span>
 	</label>
 </div>
 
